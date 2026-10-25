@@ -1,0 +1,27 @@
+# Ubuntu Server autoinstall for the VM Manager ISO (read from the root of the install media).
+# The installer only stops for the sections below; everything else is answered here.
+# It must work without internet: nothing is downloaded, packages come from the ISO itself.
+autoinstall:
+  version: 1
+  # Asked on screen: network (a fixed IP is recommended), target disk, hostname + admin user.
+  interactive-sections:
+    - network
+    - storage
+    - identity
+  refresh-installer:
+    update: false
+  source:
+    id: ubuntu-server
+  locale: en_US.UTF-8
+  keyboard:
+    layout: us
+  apt:
+    # No mirror is reachable: install from the packages on the ISO.
+    fallback: offline-install
+    geoip: false
+  ssh:
+    install-server: true
+    allow-pw: true
+  late-commands:
+    # Copies the VM Manager bundle to /opt/vm-manager and enables the first-boot setup.
+    - bash /cdrom/vmm-iso/late-install.sh

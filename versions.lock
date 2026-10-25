@@ -1,0 +1,36 @@
+# Image digests for versions.env, written by ./m.sh deps --lock on 2026-10-19.
+# Normal runs download exactly these; re-run --lock only after changing versions.env.
+docker.io/library/eclipse-temurin:25-jdk sha256:2d5d5e9b533342a565907c84f47a2ec298c40cde7b13a3ca85d4950fa456a641
+docker.io/library/postgres:16 sha256:ca0bd484cb98bf4b24eb1010e73fb3fcbd6714d240fbc1a10eea5b7dbecb641d
+gcr.io/k8s-staging-sig-storage/objectstorage-sidecar:v0.2.2 sha256:c7166a73a303c43c8c1dca3e81aacf2fa85e98b46bcab0b64249cde19fa67979
+ghcr.io/k8snetworkplumbingwg/multus-cni:v4.3.1-thick sha256:a357a79359b80ddd5f4699117946cacf3b54f5baecf7944535594863e875fc25
+quay.io/calico/calico:v3.33.0 sha256:4ebc20730127bc9e8bf1db5f5a2d8b58cf37fe0e891b3c7b5471992221d213e5
+quay.io/calico/node:v3.33.0 sha256:565d8db3200e443955557f8f28ff44ab8a4a456754bc74a19c4f2f3444af9b1c
+quay.io/calico/third-party-cni-plugins:v3.33.0 sha256:0f32f48279484c0d6f0e0d0e767b2d0e1a6c6ca34cb3421a61b989d992f3df41
+quay.io/ceph/ceph:v20.2.4 sha256:6bb1c8a42fbc0bf87938946990b65174466997bc11c31eb5a323225a779fd8f9
+quay.io/ceph/cosi:v0.1.4 sha256:8939634644dc270e8a9c3ae1e4dd5adb03973e9f31db649638c33828bfcefc0b
+quay.io/cephcsi/ceph-csi-operator:v1.0.4 sha256:c62933fd4083635f969f8a61932af45dba9902d48867e2b5d98a69d8e4344eb6
+quay.io/cephcsi/cephcsi:v3.17.1 sha256:0b62db8afc9b174619186c87084a8952157daa719415c598603be22b63cc1293
+quay.io/csiaddons/k8s-sidecar:v0.14.0 sha256:69092d026323307933fba2bed9c57d864f2a92cfd385d644b478442ded0d2886
+quay.io/kubevirt/cdi-apiserver:v1.66.1 sha256:98b71040e0e8de9397b57b4998641d4d3ea248fc300253b23085838990c4d241
+quay.io/kubevirt/cdi-cloner:v1.66.1 sha256:febbe8b265bb6fcf7ab743b780069fbae4a0531119933026de59545ad1bfc7a3
+quay.io/kubevirt/cdi-controller:v1.66.1 sha256:0cbf467d04febc5d63b7682524e87be7d775b488cb8b5963706d2ebc3465a72f
+quay.io/kubevirt/cdi-importer:v1.66.1 sha256:e22b63872cd04da43c62ad8ebb73cac46958b6e759fcc347752ec2ace1df75f4
+quay.io/kubevirt/cdi-operator:v1.66.1 sha256:470b2997b87c152b2573cdb4a3feb2a7925f60602e16c052de94e8d765b97357
+quay.io/kubevirt/cdi-uploadproxy:v1.66.1 sha256:f2493c0b33140167135110561ff415b8344f33dd53e20b9c8fbdb288e43326c9
+quay.io/kubevirt/cdi-uploadserver:v1.66.1 sha256:d3a6b735efcc914a0c9679fa8f64ab3dda764f7997d53bcafa6e2944f123420a
+quay.io/tigera/operator:v1.44.0 sha256:066c2e8d67452903a516fa54aabc22a604ec911b5882467b4de550d10fa8b21e
+registry.k8s.io/coredns/coredns:v1.14.2 sha256:e7e6440cfd1e919280958f5b5a6ab2b184d385bba774c12ad2a9e1e4183f90d9
+registry.k8s.io/etcd:3.6.8-0 sha256:397189418d1a00e500c0605ad18d1baf3b541a1004d768448c367e48071622e5
+registry.k8s.io/kube-apiserver:v1.36.5 sha256:4b3e69973a1d58d3c1f670d3477a9b9f14a03a271823113e8e0c9a333eb84f48
+registry.k8s.io/kube-controller-manager:v1.36.5 sha256:2d717af134451db77ea053c3426bc82edc0e55415eb36e1260313c636ebe9a4d
+registry.k8s.io/kube-proxy:v1.36.5 sha256:5f180e85f05b5b0949fc9d2886ca536c2aa8b8a3b8302b58e7d49c4a645f97a9
+registry.k8s.io/kube-scheduler:v1.36.5 sha256:3804f66442962cefbe11fcd5330d5e7a797bfb3dc8535c322d005637b404a85f
+registry.k8s.io/metrics-server/metrics-server:v0.9.0 sha256:d9862115e7c7881280d3d75ca26bda8ffc0fc213315979575bf23ce9826205c0
+registry.k8s.io/pause:3.10.2 sha256:f548e0e8e3dc1896ca956272154dde3314e8cc4fde0a57577ee9fa1c63f5baf4
+registry.k8s.io/sig-storage/csi-attacher:v4.12.0 sha256:b9dc9a714a484ccdeeb6f86d88d4db9b7a5ecfc5a55da6db3a60bb3fa33c278a
+registry.k8s.io/sig-storage/csi-node-driver-registrar:v2.17.0 sha256:f9de845b170155199f2a2a3f9531cf13d78e31235e9db6b6582a8b0db0a50dad
+registry.k8s.io/sig-storage/csi-provisioner:v6.2.0 sha256:6be9f63ca4caa6c46aae55aa372500949d8a21473d72f819da1f746076b32d4e
+registry.k8s.io/sig-storage/csi-resizer:v2.1.0 sha256:589e525cddef6d768e68da1f0bc9ffd0a24bf3add3dd010648eb7189976fde79
+registry.k8s.io/sig-storage/csi-snapshotter:v8.5.0 sha256:da081c27e8a6d91f36042c1942362d0515ced8d06e18c11b8f893e58c4d6d797
+registry.k8s.io/sig-storage/snapshot-controller:v8.6.0 sha256:81e79f205083f105e573ba2ebfe5964ede7f69a154e8627f53ebbbccd3ed9f70

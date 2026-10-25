@@ -1,0 +1,18 @@
+[Unit]
+Description=VM Manager first-boot setup
+Documentation=file:///opt/vm-manager/versions.txt
+Wants=network-online.target
+After=network-online.target
+# Runs until it has succeeded once; after a failure or power loss it continues on the next boot.
+ConditionPathExists=!/var/lib/vm-manager/firstboot-done
+
+[Service]
+Type=oneshot
+ExecStart=/usr/local/sbin/vmm-firstboot
+StandardOutput=journal+console
+StandardError=journal+console
+TimeoutStartSec=infinity
+RemainAfterExit=yes
+
+[Install]
+WantedBy=multi-user.target

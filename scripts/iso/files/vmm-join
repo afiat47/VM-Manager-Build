@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# Join this server to an existing VM Manager cluster, offline, from /opt/vm-manager.
+#   sudo vmm-join <console-url> <join-code>     (code from Servers > Add server, valid 2 hours)
+set -o pipefail
+[ "$(id -u)" = 0 ] || exec sudo "$0" "$@"
+if [ $# -ne 2 ]; then
+    echo "Usage: sudo vmm-join <console-url> <join-code>   e.g. sudo vmm-join http://10.20.0.11:30080 VMM-XXXX-XXXX-XXXX-XXXX" >&2
+    exit 1
+fi
+/opt/vm-manager/vm-manager/installer/install.sh join "$1" "$2" 2>&1 | tee -a /var/log/vm-manager-install.log &&
+    rm -f /etc/issue.d/vm-manager.issue

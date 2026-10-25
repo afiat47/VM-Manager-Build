@@ -1,0 +1,10 @@
+# LF line endings everywhere, also in Windows checkouts (core.autocrlf=true): the scripts run in
+# bash and in Linux containers, and the files under scripts/iso/files go onto the ISO.
+* text=auto eol=lf
+
+# Binary files: never convert.
+*.iso binary
+*.tar binary
+*.gz binary
+*.png binary
+*.pdf binary

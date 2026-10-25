@@ -1,0 +1,43 @@
+#!/usr/bin/env bash
+# VM Manager first-boot setup (vmm-firstboot.service).
+#   role create: installs the cluster and VM Manager from /opt/vm-manager, offline.
+#   role join:   shows how to join this server to an existing cluster (vmm-join).
+# Progress goes to the console and to /var/log/vm-manager-install.log; the login screen
+# (/etc/issue.d/vm-manager.issue) shows the result.
+set -uo pipefail
+
+ROLE="$(cat /etc/vm-manager/role 2>/dev/null || echo create)"
+ISSUE=/etc/issue.d/vm-manager.issue
+STATE=/var/lib/vm-manager
+mkdir -p "$(dirname "${ISSUE}")" "${STATE}"
+
+issue() { printf '\n%s\n\n' "$*" >"${ISSUE}"; }
+
+# Success means a working cluster with VM Manager deployed, not just a zero exit code.
+installed() {
+    [ -f /etc/kubernetes/admin.conf ] &&
+        kubectl --kubeconfig /etc/kubernetes/admin.conf -n vm-manager get deployment vm-manager >/dev/null 2>&1
+}
+
+case "${ROLE}" in
+join)
+    issue "VM Manager: this server is ready to join a cluster.
+  In the console of the existing cluster open Servers > Add server, then run here:
+    sudo vmm-join <console-url> <join-code>"
+    touch "${STATE}/firstboot-done"
+    ;;
+*)
+    issue "VM Manager: setting up the cluster... (progress: sudo journalctl -fu vmm-firstboot)"
+    if /usr/local/sbin/vmm-install && installed; then
+        ip="$(hostname -I | awk '{print $1}')"
+        issue "VM Manager is running: http://${ip}:30080
+  Sign in as root with the password in /root/vm-manager-initial-password"
+        touch "${STATE}/firstboot-done"
+    else
+        issue "VM Manager setup FAILED - see /var/log/vm-manager-install.log.
+  Fix the cause (e.g. network settings), then run: sudo vmm-install
+  (it also retries automatically on the next boot)"
+        exit 1
+    fi
+    ;;
+esac

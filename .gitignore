@@ -1,0 +1,11 @@
+# Source repositories: separate git repos (branches vmm/*), not part of this repo.
+# The build reads them through their own git (snapshots, version tags), so keep their .git folders.
+/apps/
+
+# Build outputs and caches (many GB); rebuilt by ./m.sh
+/bundle/
+/cache/
+/docker/images/
+/manifests/
+/logs/
+/output/
